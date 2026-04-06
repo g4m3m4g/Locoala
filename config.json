@@ -1,0 +1,7 @@
+{
+  "port": 80,
+  "domains": {
+    "frontend.local": "http://localhost:3000",
+    "backend.local": "http://localhost:8080"
+  }
+}
