@@ -24,3 +24,12 @@ func Load() (*Config, error) {
 
 	return &cfg, nil
 }
+
+func Save(cfg *Config) error {
+	data, err := json.MarshalIndent(cfg, "", "  ")
+	if err != nil {
+		return err
+	}
+
+	return os.WriteFile("config.json", data, 0644)
+}
