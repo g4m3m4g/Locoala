@@ -5,6 +5,7 @@ import (
 	"os"
 
 	"github.com/g4m3m4g/locoala/internal/config"
+	"github.com/g4m3m4g/locoala/internal/hosts"
 )
 
 func add() {
@@ -33,5 +34,12 @@ func add() {
 		return
 	}
 
+	err = hosts.Add(domain)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	
+	
 	fmt.Printf("Added %s → %s\n", domain, target)
 }
