@@ -5,6 +5,7 @@ import (
 	"os"
 
 	"github.com/g4m3m4g/locoala/internal/config"
+	"github.com/g4m3m4g/locoala/internal/hosts"
 )
 
 func remove() {
@@ -30,5 +31,10 @@ func remove() {
 		return
 	}
 
+	err = hosts.Remove(domain)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
 	fmt.Printf("Removed %s\n", domain)
 }
